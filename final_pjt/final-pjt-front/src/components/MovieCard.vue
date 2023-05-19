@@ -1,6 +1,5 @@
 <template>
-  <div class="ticket">
-    <img :src="imgUrl" alt="">
+  <div class="ticket" :style="`background-image: url(${imgUrl})`">
   </div>
 </template>
 
@@ -12,87 +11,57 @@ export default {
   props:{
     movie : Object,
   },
-  computed:{
+  computed: {
     imgUrl(){
-      // return '정해진 url http' + this.movie.{axios로 받아온 데이터의 url}
       return `${IMG_URL}` + this.movie.poster_path
     }
   },
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const ticket = document.querySelector(".ticket");
+  const ticketWidth = ticket.offsetWidth;
+  const ticketHeight = ticket.offsetHeight;
+
+  const circle = document.querySelector(".ticket::before");
+  const circleSize = circle.offsetWidth;
+
+  const offsetX = ticketWidth / 2 - circleSize / 2;
+  const offsetY = ticketHeight / 2 - circleSize / 2;
+
+  circle.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+});
+
 </script>
 
 <style scoped>
 .ticket {
-  width: 160px;
-  height: 250px;
-  background-image: imgUrl;
+  width: 170px;
+  height: 300px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
 
-.ticket::before, .ticket::after {
+.ticket::before {
   content: "";
   position: absolute;
-  height: 100px;
-  width: 100px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
-  border: 2px solid #000;
   border-radius: 50%;
 }
 
-.ticket::before {
-  top: 0;
-  left: 0;
-  transform: translate(-60%, -60%);
-}
-
 .ticket::after {
-  bottom: 0;
-  right: 0;
-  transform: translate(60%, 60%);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border: 2px solid #000;
+  border-radius: 25px;
+  box-sizing: border-box;
 }
-
-/* .ticket::before:nth-child(1) {
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.ticket::before:nth-child(2) {
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.ticket::before:nth-child(3) {
-  top: 50%;
-  right: 0;
-  transform: translate(50%, -50%);
-}
-
-.ticket::before:nth-child(4) {
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 50%);
-}
-
-.ticket::before:nth-child(5) {
-  top: 0;
-  right: 50%;
-  transform: translate(50%, -50%);
-}
-
-.ticket::before:nth-child(6) {
-  bottom: 50%;
-  left: 0;
-  transform: translate(-50%, 50%);
-}
-
-.ticket::before:nth-child(7) {
-  bottom: 50%;
-  right: 0;
-  transform: translate(50%, 50%);
-} */
 </style>

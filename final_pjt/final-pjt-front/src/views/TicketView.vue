@@ -11,7 +11,7 @@
 
 <script>
 import axios from 'axios'
-const TOP_RATED_URL =  `https://api.themoviedb.org/3/movie/top_rated?api_key=db499efb2cc0ba6f9698b4699f1b762e&language=ko-KR&page=1`
+const TOP_RATED_URL = `https://api.themoviedb.org/3/movie/top_rated?api_key=db499efb2cc0ba6f9698b4699f1b762e&language=ko-KR&page=1`
 
 import MovieCard from '@/components/MovieCard.vue'
 
