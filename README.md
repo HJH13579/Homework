@@ -19,26 +19,20 @@
 - 포스터 크기 조정, 가로/세로 길이 변경
 - 시간이 지나면 자동으로 다음 리스트의 포스터들로 넘어가기
 
-> 설치 필수
-- npm install -g @vue/cli
-- npm install vue-carousel
-- npm intall axios
-
 <django 프로젝트 만들기>
 
 python -m venv venv  #가상환경 생성
 
-source ./venv/Scripts/activate  #가상환경 활성화
+source venv/Scripts/activate  #가상환경 활성화
 
-pip install -r required
+cd front-server  #프로젝트가 있는 폴더로 이동 (ls로 이동이나 실행 가능한 폴더 파일 확인)
 
-cd my_pjt  #프로젝트가 있는 폴더로 이동 (ls로 이동이나 실행 가능한 폴더 파일 확인)
+pip install -r requirements.txt
 
 python manage.py runserver  #서버 실행
 
 
 가상환경 활성화되어 있으면 서버실행
-
 
 인증관련할 때
 
@@ -48,9 +42,15 @@ pip install 'dj-rest-auth[with_social]'
 
 vue 관련
 
-npm i
-npm install vue bootstrap-vue bootstrap
 npm runserve
+> 설치 필수
+- npm install -g @vue/cli
+- npm install vue-carousel
+- npm intall axios
+- npm i
+- npm install vue bootstrap-vue bootstrap
+
+=> npm run serve
 
 부트스트랩 추가되어서 프로젝트 시작하기 전에  npm install vue bootstrap-vue bootstrap
 해주셔야 오류가 안납니다!
