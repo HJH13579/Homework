@@ -10,6 +10,7 @@ import CreateView from '@/views/CreateView'
 import DetailView from '@/views/DetailView'
 import SignUpView from '@/views/SignUpView'
 import LogInView from '@/views/LogInView'
+import ProfileView from '@/views/ProfileView'
 import FourAnswerView from '@/components/Quiz/FourAnswerView.vue'
 import ThreeAnswerView from '@/components/Quiz/ThreeAnswerView.vue'
 import TwoAnswerView from '@/components/Quiz/TwoAnswerView.vue'
@@ -75,11 +76,11 @@ const routes = [
     component: LogInView
   },
 
-  // 게시글 id
+  // 프로필
   {
-    path: '/:id',
-    name: 'DetailView',
-    component: DetailView,
+    path: '/profile/',
+    name: 'ProfileView',
+    component: ProfileView
   },
 
   // 퀴즈 결과에 따른 라우터
@@ -113,6 +114,12 @@ const routes = [
     component: NoAnswerView,
   },
 
+  // 게시글 id
+  {
+    path: '/:id',
+    name: 'DetailView',
+    component: DetailView,
+  },
 
 ]
 

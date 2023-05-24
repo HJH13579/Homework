@@ -27,8 +27,9 @@ import axios from 'axios'
 
 
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
-const API_KEY = 'db499efb2cc0ba6f9698b4699f1b762e';
+const API_KEY = 'db499efb2cc0ba6f9698b4699f1b762e'
 const POPULAR_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&page=1`
+
 export default {
   name: 'LogInView',
   data() {
