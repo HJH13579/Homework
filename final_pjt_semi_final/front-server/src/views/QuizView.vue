@@ -48,6 +48,7 @@ const urls = [
   `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=ko-KR`,
   `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ko-KR&`,
   `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=ko-KR`,
+  `https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=ko-KR`
 ]
 const IMG_URL = 'https://image.tmdb.org/t/p/w300'
 

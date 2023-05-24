@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>만점~!</h1>
+    <h1>만점~!</h1>'
+    <h1>당신은 영화 마스터</h1>
     <h1>개봉예정작들 추천해드릴게요! </h1>
 
     <div class="">
@@ -17,7 +18,7 @@
 import lodash from 'lodash'
 import axios from 'axios'
 
-const IMG_URL = 'https://image.tmdb.org/t/p/w500'
+const IMG_URL = 'https://image.tmdb.org/t/p/w300'
 
 export default {
   name: 'FourAnswerView',
