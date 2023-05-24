@@ -16,7 +16,7 @@ User = get_user_model()
 
 class UserProfileView(generics.RetrieveAPIView):
     serializer_class = UserSerializer
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get_object(self):
         return self.request.user
